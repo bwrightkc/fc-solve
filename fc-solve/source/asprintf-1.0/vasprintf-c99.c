@@ -42,7 +42,7 @@ int vasprintf(char **strp, const char *fmt, va_list ap)
         char *str = malloc(size + 1); //+1 for null
         if (str)
         {
-            r = vsnprintf(*strp, size + 1, fmt, ap); //+1 for null
+            r = vsnprintf(str, size + 1, fmt, ap); //+1 for null
             if ((r < 0) || (r > size))
             {
                 free(str);
